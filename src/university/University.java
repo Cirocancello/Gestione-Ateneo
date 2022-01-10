@@ -1,5 +1,8 @@
 package university;
 
+import java.util.Arrays;
+import java.util.Comparator;
+
 public class University {
 	
 	private static final int FIRST_COURSE_CODE = 10;
@@ -75,7 +78,7 @@ public class University {
 		return getStudent(id).toString();		
 	}
 	
-	private Student getStudent(int id) {
+	protected Student getStudent(int id) {
 		return students[id - FIRST_STUDENT];
 	}
 	
@@ -112,7 +115,7 @@ public class University {
 		return getCourse(code).toString();
 	}
 	
-	private Course getCourse(int code) {
+	protected Course getCourse(int code) {
 		return courses[code - FIRST_COURSE_CODE];
 	}
 	
@@ -147,5 +150,13 @@ public class University {
 	 */
 	public String studyPlan(int studentID) {
 		return getStudent(studentID).getStudyPlan();
+	}
+	
+	protected Student[] top(int n, Comparator<Student> cmp) {
+		int numStudents =  nextStudentId - FIRST_STUDENT;
+		n = Math.min(n, numStudents);
+		Student[] sorted = Arrays.copyOf(students,  numStudents);
+		Arrays.sort(sorted, cmp.reversed());
+		return Arrays.copyOf(sorted, n);
 	}
 }

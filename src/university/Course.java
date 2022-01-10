@@ -10,6 +10,9 @@ public class Course {
 	private Student[] enrolled = new Student[MAX_ENROLLED];
 	private int nextStudentIndex = 0;
 	
+	private Exam[] exams = new Exam[MAX_ENROLLED];
+	private int nextExamIndex = 0;
+	
 	public Course(Integer code, String title, String teacher) {
 		this.code = code;
 		this.title = title;
@@ -45,6 +48,25 @@ public class Course {
 		}
 		
 		return result.trim();
+	}
+	
+	public int addExam(Exam e) {
+		exams[nextExamIndex] = e;
+		return nextExamIndex++;
+	}
+	
+	public double average() {
+		if (nextExamIndex == 0) {
+			return Double.NaN;
+		}
+		double sum = 0.0;
+		for (Exam e : exams) {
+			if (e == null) {
+				break;
+			}
+			sum += e.getGrade();
+		}
+		return sum / nextExamIndex;
 	}
 	
 	@Override

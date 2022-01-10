@@ -9,6 +9,8 @@ public class Student {
 	private Course[] studyPlan = new Course[MAX_STUDY_PLAN];
 	private int nextCourseCode = 0;
 	
+	private Exam[] exams = new Exam[MAX_STUDY_PLAN];
+	private int nextExamIndex = 0;
 	
 	/**
 	 * metodo costruttore
@@ -62,8 +64,36 @@ public class Student {
 		return bf.toString().trim();// trim toglie i caratteri speciali
 									// l' ultimo torno a capo
 	}
+	
+	public int addExam(Exam e) {
+		exams[nextExamIndex] = e;
+		return nextExamIndex++;
+	}
+	
+	public double average() {
+		if (nextExamIndex == 0) {
+			return Double.NaN;
+		}
+		double sum = 0.0;
+		for (Exam e : exams) {
+			if (e == null ) {
+				break;
+			}
+			sum += e.getGrade();
+		}
+		return sum / nextExamIndex;
+	}
 
-
+    public double getScore(){
+    	double avg = average();
+    	if (Double.isNaN(avg)) {
+    		return Double.NEGATIVE_INFINITY;
+    	} else {
+    		avg += nextExamIndex / nextCourseCode * 10;
+    	}
+    	return avg;
+    }
+	
 	@Override
 	public String toString() {
 		return  id + ", " + first + ", " + last ;

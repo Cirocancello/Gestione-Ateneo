@@ -1,17 +1,14 @@
-
 package exampleApp;
 
-import university.University;
+import university.UniversityExt;
 
-//import university;
-
-public class ExampleApp {
+public class ExampleAppExt {
 
 	public static void main(String[] args) {
 		
 		String universityName = "Federico II";
 		
-		University poli = new University(universityName);
+		UniversityExt poli = new UniversityExt(universityName);
 		
 		poli.setRector("Guido", "Saracco");
 
@@ -44,8 +41,16 @@ public class ExampleApp {
 		System.out.println(poli.studyPlan(s1));
 		// 10 Macro Economies, Paul Krugman
 		// 11 Object Oriented Programming, James Gosling
+				
+		poli.exam(s1, macro, 27);
+		poli.exam(s2, macro, 30);
+		poli.exam(s2, oop, 28);
 		
+		System.out.println(poli.studentAvg(s2)); // 29.0
+		System.out.println(poli.courseAvg(macro)); // 28.5
 		
+		System.out.println("Best students:\n"+ poli.topThreeStudents());
+
 	}
 
 }

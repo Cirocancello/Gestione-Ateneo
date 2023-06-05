@@ -1,6 +1,6 @@
-package exampleApp;
+package GestioneAteneo.src.exampleApp;
 
-import university.UniversityExt;
+import GestioneAteneo.src.university.UniversityExt;
 
 public class ExampleAppExt {
 

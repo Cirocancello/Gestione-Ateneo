@@ -1,7 +1,7 @@
 
-package exampleApp;
+package GestioneAteneo.src.exampleApp;
 
-import university.University;
+import GestioneAteneo.src.university.University;
 
 //import university;
 

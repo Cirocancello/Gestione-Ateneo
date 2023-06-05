@@ -1,4 +1,4 @@
-package university;
+package GestioneAteneo.src.university;
 
 public class Student {
 	private static final int MAX_STUDY_PLAN = 25;

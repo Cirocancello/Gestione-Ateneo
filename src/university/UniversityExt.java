@@ -1,4 +1,4 @@
-package university;
+package GestioneAteneo.src.university;
 
 import java.util.logging.Logger;
 import java.util.Comparator;

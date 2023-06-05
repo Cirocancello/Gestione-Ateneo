@@ -1,4 +1,4 @@
-package university;
+package GestioneAteneo.src.university;
 
 public class Course {
  

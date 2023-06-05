@@ -1,4 +1,4 @@
-package university;
+package GestioneAteneo.src.university;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -10,8 +10,8 @@ public class University {
 	private static final int MAX_STUDENTS = 1000;
 	private static final int FIRST_STUDENT = 10000;
 	
-	private String name; //nome dell' università
-	private String rector; // rettore dell' università
+	private String name; //nome dell' universitï¿½
+	private String rector; // rettore dell' universitï¿½
 	
 	private Student[] students = new Student[MAX_STUDENTS];
 	private int nextStudentId = FIRST_STUDENT;	
@@ -36,7 +36,7 @@ public class University {
 	}
 	
 	/**
-	 * definisce informazioni del Rettore dell' università
+	 * definisce informazioni del Rettore dell' universitï¿½
 	 * 
 	 * @param first : nome del Rettore
 	 * @param last  : cognome del Rettore
@@ -54,11 +54,11 @@ public class University {
 	}
 	
 	/**
-	 *  inserisce uno studente in una università
+	 *  inserisce uno studente in una universitï¿½
 	 *  
 	 * @param first : nome dello studente
 	 * @param last  : cognome dello studente
-	 * @return il metodo restituisce il numero di matricola che è stato assegnato allo studente
+	 * @return il metodo restituisce il numero di matricola che ï¿½ stato assegnato allo studente
 	 */
 	public int enroll(String first, String last) {
 		Student s = new Student(nextStudentId, first, last);
@@ -82,7 +82,7 @@ public class University {
 		return students[id - FIRST_STUDENT];
 	}
 	
-// in alternativa si può usare questo metodo che fa esattamente la stessa operazione
+// in alternativa si puï¿½ usare questo metodo che fa esattamente la stessa operazione
 	
 //	public String student(int id) {
 //	Student s = students[id - FIRST_STUDENT];
